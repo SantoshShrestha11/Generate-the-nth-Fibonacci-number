@@ -1,7 +1,7 @@
 use std::io;
 
 fn main() {
-    println!("Enter the posigion (n) of the Fibonacci number to find: ");
+    println!("Enter the position (n) of the Fibonacci number to find: ");
 
     let mut input = String::new();
     io::stdin()
@@ -16,18 +16,18 @@ fn main() {
         }
     };
     
-    let result = fibonacci_recrusive(n);
+    let result = fibonacci_recursive(n);
     println!("The {n}th Fibonacci number is {result}");
-
 }
 
-fn fibonacci_recrusive(n: usize) -> u64 {
+fn fibonacci_recursive(n: usize) -> u64 {
     if n == 0 {
         return 0;
     }
-    if n==1 {
+    if n == 1 {
         return 1;
     }
 
-    fibonacci_recrusive(n - 1) + fibonacci_recrusive(n-2)
+    fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 }
+
